@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ruin Watchtower
+* source:	https://sketchfab.com/3d-models/ruin-watchtower-b1e175e5e2a344b5b164fea0c8e8fece
+* author:	Ajay Gawde (https://sketchfab.com/aagawde)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ruin Watchtower" (https://sketchfab.com/3d-models/ruin-watchtower-b1e175e5e2a344b5b164fea0c8e8fece) by Ajay Gawde (https://sketchfab.com/aagawde) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

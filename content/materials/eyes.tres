@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://br46rw5poow0g"]
+
+[ext_resource type="Shader" uid="uid://hpycyjktrqyl" path="res://content/scripts/shaders/eyes.gdshader" id="1_x7pin"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_x7pin")
+shader_parameter/emission_strength = 7.000000285
+shader_parameter/eye_color = Color(1, 1, 1, 1)

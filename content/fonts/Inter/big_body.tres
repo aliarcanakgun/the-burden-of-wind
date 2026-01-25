@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://dkjhlly72sdqx"]
+
+[ext_resource type="FontFile" uid="uid://ddjg6noq8nhx0" path="res://content/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" id="1_mcs8e"]
+
+[sub_resource type="FontVariation" id="FontVariation_6h27b"]
+base_font = ExtResource("1_mcs8e")
+variation_opentype = {
+1869640570: 20,
+2003265652: 700
+}
+
+[resource]
+font = SubResource("FontVariation_6h27b")

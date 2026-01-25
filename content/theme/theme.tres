@@ -1,0 +1,144 @@
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://b76gwb23gleu3"]
+
+[ext_resource type="FontFile" uid="uid://ddjg6noq8nhx0" path="res://content/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" id="1_kdbql"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="2_kdbql"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="3_p73nq"]
+
+[sub_resource type="FontVariation" id="FontVariation_p73nq"]
+base_font = ExtResource("1_kdbql")
+variation_opentype = {
+1869640570: 20,
+2003265652: 700
+}
+
+[sub_resource type="Resource" id="Resource_at6fl"]
+script = ExtResource("2_kdbql")
+color = Color(0.4973958, 0.4973958, 0.4973958, 0.9019608)
+width_left = 3
+width_top = 3
+width_right = 3
+width_bottom = 3
+
+[sub_resource type="StyleBox" id="StyleBox_5867h"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+script = ExtResource("3_p73nq")
+color = Color(0.2265625, 0.2265625, 0.2265625, 0.3137255)
+borders = Array[ExtResource("2_kdbql")]([SubResource("Resource_at6fl")])
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_blur = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpth8"]
+
+[sub_resource type="Resource" id="Resource_l15s1"]
+script = ExtResource("2_kdbql")
+color = Color(1, 0.25098038, 0.3329044, 0.9019608)
+width_left = 3
+width_top = 3
+width_right = 3
+width_bottom = 3
+
+[sub_resource type="StyleBox" id="StyleBox_jnxqq"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+script = ExtResource("3_p73nq")
+color = Color(0.37254903, 0.37254903, 0.37254903, 0.3137255)
+borders = Array[ExtResource("2_kdbql")]([SubResource("Resource_l15s1")])
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_enabled = true
+shadow_color = Color(1, 0.2509804, 0.33333334, 0.2901961)
+shadow_blur = 7
+shadow_spread = Vector2(0.75, 0.75)
+
+[sub_resource type="Resource" id="Resource_bdgst"]
+script = ExtResource("2_kdbql")
+color = Color(0.7526042, 0.7526042, 0.7526042, 0.9019608)
+width_left = 3
+width_top = 3
+width_right = 3
+width_bottom = 3
+
+[sub_resource type="StyleBox" id="StyleBox_jxsot"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+script = ExtResource("3_p73nq")
+draw_center = false
+borders = Array[ExtResource("2_kdbql")]([SubResource("Resource_bdgst")])
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_blur = 0
+
+[sub_resource type="Resource" id="Resource_c243g"]
+script = ExtResource("2_kdbql")
+color = Color(0.8411458, 0.203715, 0.27379903, 0.9019608)
+width_left = 3
+width_top = 3
+width_right = 3
+width_bottom = 3
+
+[sub_resource type="StyleBox" id="StyleBox_6e0r5"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+script = ExtResource("3_p73nq")
+color = Color(1, 0.5130209, 0.5598459, 0.11764706)
+draw_center = false
+borders = Array[ExtResource("2_kdbql")]([SubResource("Resource_c243g")])
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_enabled = true
+shadow_color = Color(0.8671875, 0.21453856, 0.2862958, 0.2901961)
+shadow_blur = 7
+shadow_spread = Vector2(0.75, 0.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p73nq"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7526042, 0.7526042, 0.7526042, 0.9019608)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[resource]
+Button/colors/font_pressed_color = Color(1, 0.2509804, 0.33333334, 0.9019608)
+Button/font_sizes/font_size = 18
+Button/fonts/font = SubResource("FontVariation_p73nq")
+Button/styles/disabled = SubResource("StyleBox_5867h")
+Button/styles/focus = SubResource("StyleBoxEmpty_wpth8")
+Button/styles/hover = SubResource("StyleBox_jnxqq")
+Button/styles/normal = SubResource("StyleBox_jxsot")
+Button/styles/pressed = SubResource("StyleBox_6e0r5")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_p73nq")

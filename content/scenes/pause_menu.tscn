@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://kw38b76pfop4"]
+
+[ext_resource type="Script" uid="uid://bfq3wxis4hiir" path="res://content/scenes/pause_menu.gd" id="1_2vitw"]
+[ext_resource type="Shader" uid="uid://ctc4o5qjp40q" path="res://content/scripts/shaders/blur.gdshader" id="1_tden2"]
+[ext_resource type="FontFile" uid="uid://ddjg6noq8nhx0" path="res://content/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" id="2_2vitw"]
+[ext_resource type="Script" uid="uid://6crsdjwnjy2y" path="res://content/scripts/button_sfx_handler.gd" id="4_6vxff"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vxff"]
+shader = ExtResource("1_tden2")
+shader_parameter/blur_radius = 8
+shader_parameter/Darkness = 0.0450000021375
+shader_parameter/R = 0.02000000095
+shader_parameter/G = 0.0
+shader_parameter/B = 0.02000000095
+shader_parameter/blur_strength = 3.20000014874012
+
+[sub_resource type="Gradient" id="Gradient_2vitw"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.12, 0.88, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.43137255, 0, 0, 0, 0.43137255, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6vxff"]
+gradient = SubResource("Gradient_2vitw")
+width = 128
+
+[sub_resource type="FontVariation" id="FontVariation_l6f8u"]
+base_font = ExtResource("2_2vitw")
+variation_opentype = {
+1869640570: 20,
+2003265652: 900
+}
+spacing_top = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifhns"]
+font = SubResource("FontVariation_l6f8u")
+font_size = 48
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("1_2vitw")
+
+[node name="blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6vxff")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="container" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="container"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("GradientTexture2D_6vxff")
+expand_mode = 1
+
+[node name="vbc" type="VBoxContainer" parent="container"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="title" type="Label" parent="container/vbc"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "DURAKLATILDI"
+label_settings = SubResource("LabelSettings_ifhns")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="resume" type="Button" parent="container/vbc"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Devam"
+
+[node name="ButtonSFXHandler" type="Node" parent="container/vbc/resume" node_paths=PackedStringArray("target_button")]
+script = ExtResource("4_6vxff")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[node name="settings" type="Button" parent="container/vbc"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Ayarlar"
+
+[node name="ButtonSFXHandler" type="Node" parent="container/vbc/settings" node_paths=PackedStringArray("target_button")]
+script = ExtResource("4_6vxff")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[node name="quit" type="Button" parent="container/vbc"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Ana Menü"
+
+[node name="ButtonSFXHandler" type="Node" parent="container/vbc/quit" node_paths=PackedStringArray("target_button")]
+script = ExtResource("4_6vxff")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[connection signal="pressed" from="container/vbc/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="container/vbc/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="container/vbc/quit" to="." method="_on_quit_pressed"]

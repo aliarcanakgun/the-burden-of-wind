@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://byqrmdows3u5p"]
+
+[ext_resource type="Texture2D" uid="uid://cyhgxmgoweqch" path="res://content/textures/kloppenheim_07_puresky_2k.exr" id="1_7gql8"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5j73k"]
+panorama = ExtResource("1_7gql8")
+energy_multiplier = 0.05
+
+[sub_resource type="Sky" id="Sky_2jnly"]
+sky_material = SubResource("PanoramaSkyMaterial_5j73k")
+
+[sub_resource type="Environment" id="Environment_yvm72"]
+background_mode = 2
+sky = SubResource("Sky_2jnly")
+ambient_light_source = 3
+ambient_light_color = Color(0.6017101, 0.43905312, 0.35891613, 1)
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_white = 6.0
+ssao_enabled = true
+glow_enabled = true
+glow_strength = 0.85
+glow_bloom = 0.2
+glow_blend_mode = 1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+volumetric_fog_ambient_inject = 0.05
+volumetric_fog_sky_affect = 0.6
+
+[node name="sky2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yvm72")
+
+[node name="MoonLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.79863554, 0.28651494, -0.5292358, 0, 0.8793994, 0.4760848, 0.601815, -0.3802182, 0.7023196, 0, 14.915, 0)
+light_color = Color(0.572549, 0.776471, 0.956863, 1)
+light_energy = 0.035
+shadow_enabled = true
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 256.0

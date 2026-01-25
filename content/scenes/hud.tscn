@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyr1ig0bgmt86"]
+
+[ext_resource type="LabelSettings" uid="uid://dkjhlly72sdqx" path="res://content/fonts/Inter/big_body.tres" id="1_o6sbh"]
+[ext_resource type="Script" uid="uid://dqc4hoyx6f2ke" path="res://content/scenes/hud.gd" id="1_traj3"]
+[ext_resource type="FontFile" uid="uid://ddjg6noq8nhx0" path="res://content/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" id="3_x8d8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc3sc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pf5g"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.06510419, 0.06510419, 0.06510419, 0.6431373)
+border_color = Color(0.7526042, 0.7526042, 0.7526042, 0.9019608)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="FontVariation" id="FontVariation_xqtpn"]
+base_font = ExtResource("3_x8d8h")
+variation_opentype = {
+1869640570: 20,
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_pheso"]
+font = SubResource("FontVariation_xqtpn")
+font_size = 36
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_traj3")
+
+[node name="dot" type="Panel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(4, 4)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nc3sc")
+
+[node name="interaction_message" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+offset_right = 17.0
+offset_bottom = 34.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pf5g")
+
+[node name="interaction_message_text" type="Label" parent="interaction_message"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("1_o6sbh")
+
+[node name="black" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="black"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ateşi söndürme..."
+label_settings = SubResource("LabelSettings_pheso")

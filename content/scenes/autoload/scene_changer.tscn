@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb5kxilppepa5"]
+
+[ext_resource type="Script" uid="uid://bwr23jfronyc" path="res://content/scenes/autoload/scene_changer.gd" id="1_kf1xv"]
+[ext_resource type="Shader" uid="uid://c5hdq0eie78tv" path="res://content/scripts/shaders/diamond_transition.gdshader" id="1_vvhvf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si5tl"]
+shader = ExtResource("1_vvhvf")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 17.765
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vvhvf"]
+
+[node name="scene_changer" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_kf1xv")
+
+[node name="rect" type="TextureRect" parent="."]
+editor_description = "ddddddfe"
+modulate = Color(0.10677081, 0.10677081, 0.10677081, 0.99607843)
+material = SubResource("ShaderMaterial_si5tl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CanvasTexture_vvhvf")

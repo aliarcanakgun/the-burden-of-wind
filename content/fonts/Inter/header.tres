@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://dq03sguo0njrq"]
+
+[ext_resource type="FontFile" uid="uid://ddjg6noq8nhx0" path="res://content/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" id="1_2havb"]
+
+[sub_resource type="FontVariation" id="FontVariation_l6f8u"]
+base_font = ExtResource("1_2havb")
+variation_opentype = {
+1869640570: 20,
+2003265652: 900
+}
+
+[resource]
+font = SubResource("FontVariation_l6f8u")
+font_size = 48

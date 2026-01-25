@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bicdojg8n0icm"]
+
+[ext_resource type="Script" uid="uid://b1y2ac1bqefiq" path="res://content/scenes/main_menu.gd" id="1_83ay5"]
+[ext_resource type="LabelSettings" uid="uid://dq03sguo0njrq" path="res://content/fonts/Inter/header.tres" id="4_83ay5"]
+[ext_resource type="Script" uid="uid://6crsdjwnjy2y" path="res://content/scripts/button_sfx_handler.gd" id="5_5hk1j"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_83ay5")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"bgm"
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09635419, 0.09635419, 0.09635419, 1)
+
+[node name="center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vbc" type="VBoxContainer" parent="center"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="title" type="Label" parent="center/vbc"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "The Burden of Wind"
+label_settings = ExtResource("4_83ay5")
+
+[node name="play" type="Button" parent="center/vbc"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Oyna"
+
+[node name="ButtonSFXHandler" type="Node" parent="center/vbc/play" node_paths=PackedStringArray("target_button")]
+script = ExtResource("5_5hk1j")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[node name="settings" type="Button" parent="center/vbc"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Ayarlar"
+
+[node name="ButtonSFXHandler" type="Node" parent="center/vbc/settings" node_paths=PackedStringArray("target_button")]
+script = ExtResource("5_5hk1j")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[node name="quit" type="Button" parent="center/vbc"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Çıkış"
+
+[node name="ButtonSFXHandler" type="Node" parent="center/vbc/quit" node_paths=PackedStringArray("target_button")]
+script = ExtResource("5_5hk1j")
+target_button = NodePath("..")
+metadata/_custom_type_script = "uid://6crsdjwnjy2y"
+
+[connection signal="pressed" from="center/vbc/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="center/vbc/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="center/vbc/quit" to="." method="_on_quit_pressed"]
