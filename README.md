@@ -1,7 +1,7 @@
 # The Burden of Wind
 
-* **TR:** [EğitiJAM 2026](https://itch.io/jam/egitijam2026) kapsamında 48 saatte geliştirilmiş bir atmosferik macera oyunudur.
-* **EN:** An atmospheric adventure game developed in 48 hours for [EğitiJAM 2026.](https://itch.io/jam/egitijam2026)
+* **TR:** [EğitiJAM 2026](https://itch.io/jam/egitijam2026) kapsamında 48 saatte geliştirilmiş atmosferik bir oyunudur.
+* **EN:** An atmospheric game developed in 48 hours for [EğitiJAM 2026.](https://itch.io/jam/egitijam2026)
 
 ### 🛠️ Geliştirme Notları / Development Notes
 
